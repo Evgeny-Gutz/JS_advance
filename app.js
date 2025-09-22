@@ -1,15 +1,10 @@
 'use strict'
 
-const data = [
-    { id: 1, name: 'Вася' },
-    { id: 2, name: 'Петя' },
-    { id: 1, name: 'Вася' },
-];
 
+function vlidateAge(dateStr) {
+    const equalDate = new Date().setFullYear(`${new Date().getFullYear() - 14}`);
 
+    return new Date(equalDate) >= new Date(dateStr);
+}
 
-let a = new Set(data.map((element, i, arr) => {
-            return arr.find(el => el.id === element.id);
-        }));
-
-console.log(a);
+console.log(vlidateAge('2011-09-22'));
